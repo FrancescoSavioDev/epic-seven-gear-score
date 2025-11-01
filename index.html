@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate your Epic Seven Gear Score quickly! Track your E7 gear, see ranks, and get detailed gear stats.">
+    <title>E7 Gear Score</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+<body>
+    <div class="header">
+        <img src="nome.png" alt="E7 Epic Seven Gear Score Calculator" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+    </div>
+
+    <div class="main-wrapper">
+        <div class="container left-section">
+            <div id="drop-area" class="drop-area container">
+                <p>Drag and drop the Fribbels file here ( gear.txt )</p>
+                <input type="file" id="jsonFile" accept=".json,.txt" style="display:none;">
+                <label for="jsonFile" class="button">Select a file</label>
+            </div>
+                
+            <div class="container chart-wrapper">
+                <div class="score-display">
+                    <p>Account Gear Score :</p>
+                    <span id="gearScoreValue">0</span>
+                     <span id="gearWhale" style="font-size: 1.5rem; margin-left: 8px;">🐋</span>
+                </div>
+                <div class="score-display2">
+                    <p>Gear Number :</p>
+                    <span id="gearNumber">0</span>
+                </div>
+                <div class="chart-box">
+                    <canvas id="dataChart"></canvas>
+                </div>
+                <div class="chart-box chart-container">
+                    <canvas id="dataChart2"></canvas>
+                </div>
+                <div class="chart-box chart-container2">
+                    <canvas id="dataChart3"></canvas>
+                </div>
+            </div>
+
+        </div>  
+
+
+        <div class="container right-section">
+
+            <div class="whale-colors">
+                <p>Gear Score Rank</p>
+                <div class="whale-item" style="filter: hue-rotate(0deg) brightness(1.1);">
+                    🐋 <span>Noob</span>
+                </div>
+                <div class="whale-item" style="filter: hue-rotate(50deg) brightness(1.1);">
+                    🐋 <span>Rookie</span>
+                </div>
+                <div class="whale-item" style="filter: hue-rotate(80deg) brightness(1.0);">
+                    🐋 <span>Pro</span>
+                </div>
+                <div class="whale-item" style="filter: hue-rotate(140deg) brightness(1.1);">
+                    🐋 <span>Elite</span>
+                </div>
+                <div class="whale-item" style="filter: hue-rotate(175deg) brightness(1.2);">
+                    🐋 <span>Legend</span>
+                </div>
+                <div class="whale-item" style="filter: hue-rotate(200deg) brightness(1.4);">
+                    🐋 <span>Whale</span>
+                </div>
+            </div>  
+
+
+            <p style="font-size: 1.1rem; color: #333; text-align: center; font-family: 'Poppins', sans-serif; margin-top: 100px;">
+                If you’d like to support me, you can make a small donation 🐋
+            </p>
+
+            <div id="donate-button-container">
+                <div id="donate-button"></div>
+                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                <script>
+                PayPal.Donation.Button({
+                env:'production',
+                hosted_button_id:'JB98Z789W78TA',
+                image: {
+                src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+                alt:'Donate with PayPal button',
+                title:'PayPal - The safer, easier way to pay online!',
+                }
+                }).render('#donate-button');
+                </script>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+<footer style="
+  background: #1a1a1a;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  border-top: 2px solid #333;
+">
+  <p style="margin: 5px 0;">Created with ❤️ by <strong>Francesco Savio</strong></p>
+  <p style="margin: 5px 0;">
+    Contact: <a href="mailto:yourmail@example.com" style="color: #00bcd4; text-decoration: none;">francesco.savio1@outlook.it</a>
+  </p>
+</footer>
+
+</html>
+
